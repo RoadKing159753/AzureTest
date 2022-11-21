@@ -21,7 +21,7 @@ jobs:
         with:
           client_id : ${{ secrets.ZSCANNER_CLIENT_ID }}
           client_secret : ${{ secrets.ZSCANNER_CLIENT_SECRET }}
-          fail_build : 'true'
+          fail_build : 'false'
           output_format : 'human+github-sarif'
           region : 'CUSTOM'
       - run : echo ${{ steps.iac-scan.outputs.sarif_file_path }}
