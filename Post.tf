@@ -14,6 +14,7 @@ resource "azurerm_postgresql_server" "example" {
 }
 
 resource "azurerm_postgresql_configuration" "example" {
+     #zpc-skip-policy: ZS-AZURE-00010:testing;ZS-AZURE-00005
      name                = "log_checkpoints"
      resource_group_name = "api-rg-pro"
      server_name         = azurerm_postgresql_server.example.name
