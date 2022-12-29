@@ -13,7 +13,7 @@ env :
   AUTH_URL : "https://int-auth.zscwp.io"
 jobs:
   test:
-    runs-on: macos-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
       - uses : ZscalerCWP/Zscaler-IaC-Action@main
@@ -25,6 +25,7 @@ jobs:
           output_format : 'human+github-sarif'
           log_level : 'debug'
           region : 'CUSTOM'
+          log_level : 'debug'
       - run : echo ${{ steps.iac-scan.outputs.sarif_file_path }}
       - name: Upload SARIF file
         if: ${{ success() || failure() && (steps.iac-scan.outputs.sarif_file_path != '') }}
